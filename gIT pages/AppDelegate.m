@@ -5,8 +5,9 @@
 //  Created by xl on 16/7/5.
 //  Copyright © 2016年 xl. All rights reserved.
 //
-
+#import "Defs.h"
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [_window setBackgroundColor:[UIColor whiteColor]];
+    [_window setTintColor:LEMON_TINT_COLOR];
+    
+    ViewController *viewController = [[ViewController alloc] init];
+    [_window setRootViewController:viewController];
+    
+    [_window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
