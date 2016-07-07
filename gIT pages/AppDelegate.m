@@ -7,7 +7,7 @@
 //
 #import "Defs.h"
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "RootTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -22,8 +22,8 @@
     [_window setBackgroundColor:[UIColor whiteColor]];
     [_window setTintColor:LEMON_TINT_COLOR];
     
-    ViewController *viewController = [[ViewController alloc] init];
-    [_window setRootViewController:viewController];
+    RootTabBarController *rootTabBarController = [[RootTabBarController alloc] init];
+    [_window setRootViewController:rootTabBarController];
     
     [_window makeKeyAndVisible];
     

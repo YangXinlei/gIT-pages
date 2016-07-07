@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		762732A31D2BACEB00E27858 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 762732A21D2BACEB00E27858 /* main.m */; };
 		762732A61D2BACEB00E27858 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 762732A51D2BACEB00E27858 /* AppDelegate.m */; };
-		762732A91D2BACEB00E27858 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 762732A81D2BACEB00E27858 /* ViewController.m */; };
 		762732AE1D2BACEC00E27858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 762732AD1D2BACEC00E27858 /* Assets.xcassets */; };
 		762732B11D2BACEC00E27858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762732AF1D2BACEC00E27858 /* LaunchScreen.storyboard */; };
 		762732BC1D2BACEC00E27858 /* gIT_pagesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 762732BB1D2BACEC00E27858 /* gIT_pagesTests.m */; };
 		762732C71D2BACEC00E27858 /* gIT_pagesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 762732C61D2BACEC00E27858 /* gIT_pagesUITests.m */; };
+		766249E11D2D2AF9002D040E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249E01D2D2AF9002D040E /* HomeViewController.m */; };
+		766249E41D2D2B98002D040E /* ActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249E31D2D2B98002D040E /* ActivityViewController.m */; };
+		766249E71D2D2BB8002D040E /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249E61D2D2BB8002D040E /* ShareViewController.m */; };
+		766249EA1D2D2BEC002D040E /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249E91D2D2BEC002D040E /* ExploreViewController.m */; };
+		766249ED1D2D2C00002D040E /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249EC1D2D2C00002D040E /* MineViewController.m */; };
+		766249F71D2DEFFF002D040E /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249F61D2DEFFF002D040E /* RootTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +43,6 @@
 		762732A21D2BACEB00E27858 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		762732A41D2BACEB00E27858 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		762732A51D2BACEB00E27858 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		762732A71D2BACEB00E27858 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		762732A81D2BACEB00E27858 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		762732AD1D2BACEC00E27858 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		762732B01D2BACEC00E27858 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		762732B21D2BACEC00E27858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,6 +53,18 @@
 		762732C61D2BACEC00E27858 /* gIT_pagesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gIT_pagesUITests.m; sourceTree = "<group>"; };
 		762732C81D2BACEC00E27858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		762732D41D2BB0D200E27858 /* Defs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defs.h; sourceTree = "<group>"; };
+		766249DF1D2D2AF9002D040E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		766249E01D2D2AF9002D040E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		766249E21D2D2B98002D040E /* ActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityViewController.h; sourceTree = "<group>"; };
+		766249E31D2D2B98002D040E /* ActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityViewController.m; sourceTree = "<group>"; };
+		766249E51D2D2BB8002D040E /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		766249E61D2D2BB8002D040E /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		766249E81D2D2BEC002D040E /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
+		766249E91D2D2BEC002D040E /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
+		766249EB1D2D2C00002D040E /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		766249EC1D2D2C00002D040E /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		766249F51D2DEFFF002D040E /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarController.h; sourceTree = "<group>"; };
+		766249F61D2DEFFF002D040E /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +115,12 @@
 		762732A01D2BACEB00E27858 /* gIT pages */ = {
 			isa = PBXGroup;
 			children = (
+				766249DE1D2D2ABD002D040E /* ViewControllers */,
 				762732A41D2BACEB00E27858 /* AppDelegate.h */,
 				762732A51D2BACEB00E27858 /* AppDelegate.m */,
+				766249F51D2DEFFF002D040E /* RootTabBarController.h */,
+				766249F61D2DEFFF002D040E /* RootTabBarController.m */,
 				762732D41D2BB0D200E27858 /* Defs.h */,
-				762732A71D2BACEB00E27858 /* ViewController.h */,
-				762732A81D2BACEB00E27858 /* ViewController.m */,
 				762732AD1D2BACEC00E27858 /* Assets.xcassets */,
 				762732AF1D2BACEC00E27858 /* LaunchScreen.storyboard */,
 				762732B21D2BACEC00E27858 /* Info.plist */,
@@ -137,6 +153,23 @@
 				762732C81D2BACEC00E27858 /* Info.plist */,
 			);
 			path = "gIT pagesUITests";
+			sourceTree = "<group>";
+		};
+		766249DE1D2D2ABD002D040E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				766249DF1D2D2AF9002D040E /* HomeViewController.h */,
+				766249E01D2D2AF9002D040E /* HomeViewController.m */,
+				766249E21D2D2B98002D040E /* ActivityViewController.h */,
+				766249E31D2D2B98002D040E /* ActivityViewController.m */,
+				766249E51D2D2BB8002D040E /* ShareViewController.h */,
+				766249E61D2D2BB8002D040E /* ShareViewController.m */,
+				766249E81D2D2BEC002D040E /* ExploreViewController.h */,
+				766249E91D2D2BEC002D040E /* ExploreViewController.m */,
+				766249EB1D2D2C00002D040E /* MineViewController.h */,
+				766249EC1D2D2C00002D040E /* MineViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +239,7 @@
 				TargetAttributes = {
 					7627329D1D2BACEB00E27858 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = N96R6G7AKT;
 					};
 					762732B61D2BACEC00E27858 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -268,9 +302,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				762732A91D2BACEB00E27858 /* ViewController.m in Sources */,
 				762732A61D2BACEB00E27858 /* AppDelegate.m in Sources */,
+				766249ED1D2D2C00002D040E /* MineViewController.m in Sources */,
 				762732A31D2BACEB00E27858 /* main.m in Sources */,
+				766249E11D2D2AF9002D040E /* HomeViewController.m in Sources */,
+				766249E71D2D2BB8002D040E /* ShareViewController.m in Sources */,
+				766249F71D2DEFFF002D040E /* RootTabBarController.m in Sources */,
+				766249EA1D2D2BEC002D040E /* ExploreViewController.m in Sources */,
+				766249E41D2D2B98002D040E /* ActivityViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +444,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "gIT pages/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.meijuan.zhang.xinlei.gIT-pages";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,7 +457,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "gIT pages/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.meijuan.zhang.xinlei.gIT-pages";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +531,7 @@
 				762732CD1D2BACEC00E27858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		762732CE1D2BACEC00E27858 /* Build configuration list for PBXNativeTarget "gIT pagesTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +540,7 @@
 				762732D01D2BACEC00E27858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		762732D11D2BACEC00E27858 /* Build configuration list for PBXNativeTarget "gIT pagesUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +549,7 @@
 				762732D31D2BACEC00E27858 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
