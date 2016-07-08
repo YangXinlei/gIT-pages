@@ -5,7 +5,7 @@
 //  Created by xl on 16/7/7.
 //  Copyright © 2016年 xl. All rights reserved.
 //
-
+#import "Defs.h"
 #import "RootTabBarController.h"
 #import "HomeViewController.h"
 #import "ActivityViewController.h"
@@ -20,6 +20,7 @@
     [super viewDidLoad];
     [[self tabBar] setTranslucent:NO];
     [[self tabBar] setBackgroundColor:[UIColor whiteColor]];
+    [[self tabBar] setTintColor:LEMON_MAIN_COLOR];
     
     // 5个viewController
     HomeViewController *homeVC              =   [[HomeViewController alloc] init];
@@ -36,6 +37,10 @@
     for (int index = 0; index < [rootViewControllers count]; ++index)
     {
         UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[rootViewControllers objectAtIndex:index]];
+        [[navigationController navigationBar] setTranslucent:NO];
+        [[navigationController navigationBar] setTintColor:LEMON_BLUE_COLOR];
+        [[navigationController navigationBar] setBarTintColor:LEMON_MAIN_COLOR];
+        [[navigationController navigationBar] setTitleTextAttributes:@{NSForegroundColorAttributeName:LEMON_TINT_COLOR}];
         
         [navigationController setTabBarItem:[[UITabBarItem alloc] initWithTitle:titles[index] image:[[UIImage imageNamed:[NSString stringWithFormat:@"tb_normal_%d", index + 1]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:[NSString stringWithFormat:@"tb_focus_%d", index + 1]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]]];
         

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PostItem.h"
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;                               // 首页主要由tableView组成
+
+@property (nonatomic, strong) NSArray<NSArray<PostItem *> *> *posts;                // 首页需要展示的文章
 
 @end

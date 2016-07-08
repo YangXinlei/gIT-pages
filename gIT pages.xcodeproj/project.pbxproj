@@ -19,6 +19,13 @@
 		766249EA1D2D2BEC002D040E /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249E91D2D2BEC002D040E /* ExploreViewController.m */; };
 		766249ED1D2D2C00002D040E /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249EC1D2D2C00002D040E /* MineViewController.m */; };
 		766249F71D2DEFFF002D040E /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249F61D2DEFFF002D040E /* RootTabBarController.m */; };
+		766249FF1D2E3C3B002D040E /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249FE1D2E3C3B002D040E /* TopTableViewCell.m */; };
+		76624A021D2E3C98002D040E /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A011D2E3C98002D040E /* PostTableViewCell.m */; };
+		76624A051D2E46E0002D040E /* PostItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A041D2E46E0002D040E /* PostItem.m */; };
+		76624A0D1D2E4999002D040E /* Blogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A0C1D2E4999002D040E /* Blogger.m */; };
+		76624A101D2E4B5A002D040E /* PostTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A0F1D2E4B5A002D040E /* PostTag.m */; };
+		76624A131D2E4CC6002D040E /* PostComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A121D2E4CC6002D040E /* PostComment.m */; };
+		76624A161D2E4F44002D040E /* HomePostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A151D2E4F44002D040E /* HomePostsManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +72,20 @@
 		766249EC1D2D2C00002D040E /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		766249F51D2DEFFF002D040E /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarController.h; sourceTree = "<group>"; };
 		766249F61D2DEFFF002D040E /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarController.m; sourceTree = "<group>"; };
+		766249FD1D2E3C3B002D040E /* TopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTableViewCell.h; sourceTree = "<group>"; };
+		766249FE1D2E3C3B002D040E /* TopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTableViewCell.m; sourceTree = "<group>"; };
+		76624A001D2E3C98002D040E /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		76624A011D2E3C98002D040E /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		76624A031D2E46E0002D040E /* PostItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostItem.h; sourceTree = "<group>"; };
+		76624A041D2E46E0002D040E /* PostItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostItem.m; sourceTree = "<group>"; };
+		76624A0B1D2E4999002D040E /* Blogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blogger.h; sourceTree = "<group>"; };
+		76624A0C1D2E4999002D040E /* Blogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blogger.m; sourceTree = "<group>"; };
+		76624A0E1D2E4B5A002D040E /* PostTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTag.h; sourceTree = "<group>"; };
+		76624A0F1D2E4B5A002D040E /* PostTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTag.m; sourceTree = "<group>"; };
+		76624A111D2E4CC6002D040E /* PostComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostComment.h; sourceTree = "<group>"; };
+		76624A121D2E4CC6002D040E /* PostComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostComment.m; sourceTree = "<group>"; };
+		76624A141D2E4F44002D040E /* HomePostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePostsManager.h; sourceTree = "<group>"; };
+		76624A151D2E4F44002D040E /* HomePostsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePostsManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +136,9 @@
 		762732A01D2BACEB00E27858 /* gIT pages */ = {
 			isa = PBXGroup;
 			children = (
-				766249DE1D2D2ABD002D040E /* ViewControllers */,
+				76624A071D2E47F9002D040E /* Models */,
+				76624A171D2E4F4E002D040E /* Managers */,
+				766249DE1D2D2ABD002D040E /* 5大页面 */,
 				762732A41D2BACEB00E27858 /* AppDelegate.h */,
 				762732A51D2BACEB00E27858 /* AppDelegate.m */,
 				766249F51D2DEFFF002D040E /* RootTabBarController.h */,
@@ -155,21 +178,89 @@
 			path = "gIT pagesUITests";
 			sourceTree = "<group>";
 		};
-		766249DE1D2D2ABD002D040E /* ViewControllers */ = {
+		766249DE1D2D2ABD002D040E /* 5大页面 */ = {
+			isa = PBXGroup;
+			children = (
+				766249F81D2E008C002D040E /* 1.首页 */,
+				766249F91D2E00A7002D040E /* 2.动态 */,
+				766249FA1D2E00B2002D040E /* 3.分享 */,
+				766249FB1D2E00BB002D040E /* 4.探索 */,
+				766249FC1D2E00C4002D040E /* 5.我的 */,
+			);
+			name = "5大页面";
+			sourceTree = "<group>";
+		};
+		766249F81D2E008C002D040E /* 1.首页 */ = {
 			isa = PBXGroup;
 			children = (
 				766249DF1D2D2AF9002D040E /* HomeViewController.h */,
 				766249E01D2D2AF9002D040E /* HomeViewController.m */,
+				766249FD1D2E3C3B002D040E /* TopTableViewCell.h */,
+				766249FE1D2E3C3B002D040E /* TopTableViewCell.m */,
+				76624A001D2E3C98002D040E /* PostTableViewCell.h */,
+				76624A011D2E3C98002D040E /* PostTableViewCell.m */,
+			);
+			name = "1.首页";
+			sourceTree = "<group>";
+		};
+		766249F91D2E00A7002D040E /* 2.动态 */ = {
+			isa = PBXGroup;
+			children = (
 				766249E21D2D2B98002D040E /* ActivityViewController.h */,
 				766249E31D2D2B98002D040E /* ActivityViewController.m */,
+			);
+			name = "2.动态";
+			sourceTree = "<group>";
+		};
+		766249FA1D2E00B2002D040E /* 3.分享 */ = {
+			isa = PBXGroup;
+			children = (
 				766249E51D2D2BB8002D040E /* ShareViewController.h */,
 				766249E61D2D2BB8002D040E /* ShareViewController.m */,
+			);
+			name = "3.分享";
+			sourceTree = "<group>";
+		};
+		766249FB1D2E00BB002D040E /* 4.探索 */ = {
+			isa = PBXGroup;
+			children = (
 				766249E81D2D2BEC002D040E /* ExploreViewController.h */,
 				766249E91D2D2BEC002D040E /* ExploreViewController.m */,
+			);
+			name = "4.探索";
+			sourceTree = "<group>";
+		};
+		766249FC1D2E00C4002D040E /* 5.我的 */ = {
+			isa = PBXGroup;
+			children = (
 				766249EB1D2D2C00002D040E /* MineViewController.h */,
 				766249EC1D2D2C00002D040E /* MineViewController.m */,
 			);
-			name = ViewControllers;
+			name = "5.我的";
+			sourceTree = "<group>";
+		};
+		76624A071D2E47F9002D040E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				76624A031D2E46E0002D040E /* PostItem.h */,
+				76624A041D2E46E0002D040E /* PostItem.m */,
+				76624A0B1D2E4999002D040E /* Blogger.h */,
+				76624A0C1D2E4999002D040E /* Blogger.m */,
+				76624A0E1D2E4B5A002D040E /* PostTag.h */,
+				76624A0F1D2E4B5A002D040E /* PostTag.m */,
+				76624A111D2E4CC6002D040E /* PostComment.h */,
+				76624A121D2E4CC6002D040E /* PostComment.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		76624A171D2E4F4E002D040E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				76624A141D2E4F44002D040E /* HomePostsManager.h */,
+				76624A151D2E4F44002D040E /* HomePostsManager.m */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,11 +396,18 @@
 				762732A61D2BACEB00E27858 /* AppDelegate.m in Sources */,
 				766249ED1D2D2C00002D040E /* MineViewController.m in Sources */,
 				762732A31D2BACEB00E27858 /* main.m in Sources */,
+				76624A131D2E4CC6002D040E /* PostComment.m in Sources */,
+				76624A101D2E4B5A002D040E /* PostTag.m in Sources */,
 				766249E11D2D2AF9002D040E /* HomeViewController.m in Sources */,
+				766249FF1D2E3C3B002D040E /* TopTableViewCell.m in Sources */,
 				766249E71D2D2BB8002D040E /* ShareViewController.m in Sources */,
+				76624A161D2E4F44002D040E /* HomePostsManager.m in Sources */,
+				76624A0D1D2E4999002D040E /* Blogger.m in Sources */,
 				766249F71D2DEFFF002D040E /* RootTabBarController.m in Sources */,
 				766249EA1D2D2BEC002D040E /* ExploreViewController.m in Sources */,
+				76624A051D2E46E0002D040E /* PostItem.m in Sources */,
 				766249E41D2D2B98002D040E /* ActivityViewController.m in Sources */,
+				76624A021D2E3C98002D040E /* PostTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
