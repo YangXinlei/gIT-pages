@@ -8,9 +8,11 @@
 
 #import "Defs.h"
 #import "HomeViewController.h"
-#import "TopTableViewCell.h"
 #import "PostTableViewCell.h"
 #import "HomePostsManager.h"
+#import "Blogger.h"
+#import "PostComment.h"
+#import "PostTag.h"
 
 #define CELLREUSE_TOPCELL           @"cr_topTVCell"
 #define CELL_REUSE_POSTCELL         @"cr_postTVCell"
@@ -27,17 +29,18 @@
     [[self navigationItem] setTitle:TITLE_HOMEPAGE];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
-//    [[HomePostsManager sharedManager] addObserver:self forKeyPath:@"didChange" options:NSKeyValueObservingOptionNew context:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homeDataUpdated) name:@"HomeDataUpdated" object:nil];
-    [[HomePostsManager sharedManager] updateHomePosts];
+    _posts = [NSArray array];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    [_tableView setBackgroundColor:[UIColor redColor]];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
-    [_tableView registerClass:[TopTableViewCell class] forCellReuseIdentifier:CELLREUSE_TOPCELL];
     [_tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:CELL_REUSE_POSTCELL];
     
     [self.view addSubview:_tableView];
+    
+    [[HomePostsManager sharedManager] updateHomePosts];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homeDataUpdated) name:@"HomeDataUpdated" object:nil];
 }
 
 -(void)didReceiveMemoryWarning
@@ -47,6 +50,8 @@
 
 - (void)homeDataUpdated
 {
+    _posts = [[HomePostsManager sharedManager] postItems];
+    
     if (_tableView != nil)
     {
         [_tableView reloadData];
@@ -57,23 +62,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[HomePostsManager sharedManager] postItems] count];
+    return [_posts count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PostItem *item = [[[HomePostsManager sharedManager] postItems] objectAtIndex:indexPath.row];
+    PostItem *item = [_posts objectAtIndex:indexPath.row];
     
-    UITableViewCell *cell = nil;
-    if (indexPath.section == 0 && indexPath.row == 0)   // 轮播海报
-    {
-        cell = [_tableView dequeueReusableCellWithIdentifier:CELLREUSE_TOPCELL forIndexPath:indexPath];
-    }
-    else
-    {
-        cell = [_tableView dequeueReusableCellWithIdentifier:CELL_REUSE_POSTCELL forIndexPath:indexPath];
-    }
-    [cell.textLabel setText:item.title];
-    [cell.detailTextLabel setText:item.title];
+    PostTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CELL_REUSE_POSTCELL forIndexPath:indexPath];
+    
+    [cell setupWithPostItem:item];
     
     return cell;
 }
@@ -87,11 +84,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0 && indexPath.row == 0)   // 轮播海报
-    {
-        return 100;
-    }
-    return 50;
+    return HOME_POSTCELL_HEIGHT;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {

@@ -7,18 +7,13 @@
 //
 
 #import "PostTableViewCell.h"
+#import "PostItem.h"
 
 @implementation PostTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+- (void)setupWithPostItem:(PostItem *)item
+{
+    [self.textLabel setText:item.title];
 }
 
 @end

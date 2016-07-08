@@ -19,7 +19,6 @@
 		766249EA1D2D2BEC002D040E /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249E91D2D2BEC002D040E /* ExploreViewController.m */; };
 		766249ED1D2D2C00002D040E /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249EC1D2D2C00002D040E /* MineViewController.m */; };
 		766249F71D2DEFFF002D040E /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249F61D2DEFFF002D040E /* RootTabBarController.m */; };
-		766249FF1D2E3C3B002D040E /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 766249FE1D2E3C3B002D040E /* TopTableViewCell.m */; };
 		76624A021D2E3C98002D040E /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A011D2E3C98002D040E /* PostTableViewCell.m */; };
 		76624A051D2E46E0002D040E /* PostItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A041D2E46E0002D040E /* PostItem.m */; };
 		76624A0D1D2E4999002D040E /* Blogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A0C1D2E4999002D040E /* Blogger.m */; };
@@ -72,8 +71,6 @@
 		766249EC1D2D2C00002D040E /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		766249F51D2DEFFF002D040E /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarController.h; sourceTree = "<group>"; };
 		766249F61D2DEFFF002D040E /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarController.m; sourceTree = "<group>"; };
-		766249FD1D2E3C3B002D040E /* TopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTableViewCell.h; sourceTree = "<group>"; };
-		766249FE1D2E3C3B002D040E /* TopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTableViewCell.m; sourceTree = "<group>"; };
 		76624A001D2E3C98002D040E /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		76624A011D2E3C98002D040E /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		76624A031D2E46E0002D040E /* PostItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostItem.h; sourceTree = "<group>"; };
@@ -195,8 +192,6 @@
 			children = (
 				766249DF1D2D2AF9002D040E /* HomeViewController.h */,
 				766249E01D2D2AF9002D040E /* HomeViewController.m */,
-				766249FD1D2E3C3B002D040E /* TopTableViewCell.h */,
-				766249FE1D2E3C3B002D040E /* TopTableViewCell.m */,
 				76624A001D2E3C98002D040E /* PostTableViewCell.h */,
 				76624A011D2E3C98002D040E /* PostTableViewCell.m */,
 			);
@@ -399,7 +394,6 @@
 				76624A131D2E4CC6002D040E /* PostComment.m in Sources */,
 				76624A101D2E4B5A002D040E /* PostTag.m in Sources */,
 				766249E11D2D2AF9002D040E /* HomeViewController.m in Sources */,
-				766249FF1D2E3C3B002D040E /* TopTableViewCell.m in Sources */,
 				766249E71D2D2BB8002D040E /* ShareViewController.m in Sources */,
 				76624A161D2E4F44002D040E /* HomePostsManager.m in Sources */,
 				76624A0D1D2E4999002D040E /* Blogger.m in Sources */,

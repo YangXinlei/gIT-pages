@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class PostItem;
+
 // 文章Cell
 @interface PostTableViewCell : UITableViewCell
+
+
+
+- (void)setupWithPostItem:(PostItem *)item;
 
 @end

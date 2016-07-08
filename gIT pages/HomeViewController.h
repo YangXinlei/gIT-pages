@@ -13,6 +13,6 @@
 
 @property (nonatomic, strong) UITableView *tableView;                               // 首页主要由tableView组成
 
-@property (nonatomic, strong) NSArray<NSArray<PostItem *> *> *posts;                // 首页需要展示的文章
+@property (nonatomic, strong) NSArray<PostItem *> *posts;                // 首页需要展示的文章
 
 @end
