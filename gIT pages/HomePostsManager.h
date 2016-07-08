@@ -11,7 +11,7 @@
 
 @interface HomePostsManager : NSObject <NSXMLParserDelegate>
 
-@property (nonatomic, strong) NSMutableArray<NSArray<PostItem *> *> *postItems;    // 首页数据
+@property (nonatomic, strong) NSMutableArray<PostItem *> *postItems;    // 首页数据
 
 + (instancetype)sharedManager;
 

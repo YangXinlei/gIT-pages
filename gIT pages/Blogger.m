@@ -10,4 +10,18 @@
 
 @implementation Blogger
 
+-(instancetype)initWithName:(NSString *)name url:(NSString *)urlStr
+{
+    self = [super init];
+    if (self)
+    {
+        _name = name;
+        _url = [NSURL URLWithString:urlStr];
+        
+        _posts = [NSArray array];
+        _sharedPosts = [NSArray array];
+    }
+    return self;
+}
+
 @end

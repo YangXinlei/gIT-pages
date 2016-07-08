@@ -18,4 +18,6 @@
 @property (nonatomic, strong) NSString  *content;   // 评论内容
 @property (nonatomic, strong) NSDate    *date;      // 评论日期
 
+- (instancetype)initWithPost:(PostItem *)post Blogger:(Blogger *)blogger Content:(NSString *)content Date:(NSString *)dateStr;
+
 @end

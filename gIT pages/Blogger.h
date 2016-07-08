@@ -18,4 +18,6 @@
 @property (nonatomic, strong) NSArray<PostItem *>   *posts;         // 原创博文
 @property (nonatomic, strong) NSArray<PostItem *>   *sharedPosts;   // 分享的博文
 
+- (instancetype)initWithName:(NSString *)name url:(NSString *)urlStr;
+
 @end

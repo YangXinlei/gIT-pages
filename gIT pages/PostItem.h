@@ -18,8 +18,11 @@
 @property (nonatomic, strong) NSURL                         *url;               // 原文链接
 @property (nonatomic, weak) Blogger                         *blogger;           // 作者
 @property (nonatomic, weak) Blogger                         *twitter;           // 推荐者
-@property (nonatomic, weak) NSArray<PostTag *>              *tags;              // 文章标签
+@property (nonatomic, weak) PostTag                         *tag;               // 文章标签
 @property (nonatomic, assign) NSUInteger                    likes;              // 点赞数
 @property (nonatomic, strong) NSArray<PostComment *>        *comments;          // 评论
+@property (nonatomic, strong) NSDate                        *date;              // 创建时间
+
+- (instancetype)initWithTitle:(NSString *)title Url:(NSString *)urlStr Blogger:(Blogger *)blogger Twitter:(Blogger *)twitter Tag:(PostTag *)tag Comments:(NSArray<PostComment *> *)comments Likes:(NSUInteger)likes Date:(NSString *)dateStr;
 
 @end

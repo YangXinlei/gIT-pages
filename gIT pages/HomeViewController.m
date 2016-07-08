@@ -27,6 +27,8 @@
     [[self navigationItem] setTitle:TITLE_HOMEPAGE];
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
+//    [[HomePostsManager sharedManager] addObserver:self forKeyPath:@"didChange" options:NSKeyValueObservingOptionNew context:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homeDataUpdated) name:@"HomeDataUpdated" object:nil];
     [[HomePostsManager sharedManager] updateHomePosts];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
@@ -43,15 +45,23 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)homeDataUpdated
+{
+    if (_tableView != nil)
+    {
+        [_tableView reloadData];
+    }
+}
+
 #pragma mark - table view data sourse
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[[[HomePostsManager sharedManager] postItems] objectAtIndex:section] count];
+    return [[[HomePostsManager sharedManager] postItems] count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PostItem *item = [[[[HomePostsManager sharedManager] postItems] objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    PostItem *item = [[[HomePostsManager sharedManager] postItems] objectAtIndex:indexPath.row];
     
     UITableViewCell *cell = nil;
     if (indexPath.section == 0 && indexPath.row == 0)   // 轮播海报
@@ -70,7 +80,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [[[HomePostsManager sharedManager] postItems] count];
+    return 1;
 }
 
 #pragma mark - table view delegate

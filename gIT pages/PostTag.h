@@ -16,4 +16,6 @@
 @property (nonatomic, strong) NSString              *name;          // 标签名
 @property (nonatomic, strong) NSArray<PostItem*>    *posts;         // 从属该标签的文章列表
 
+- (instancetype)initWithName:(NSString *)name;
+
 @end
