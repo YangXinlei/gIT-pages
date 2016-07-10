@@ -25,6 +25,7 @@
 		76624A101D2E4B5A002D040E /* PostTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A0F1D2E4B5A002D040E /* PostTag.m */; };
 		76624A131D2E4CC6002D040E /* PostComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A121D2E4CC6002D040E /* PostComment.m */; };
 		76624A161D2E4F44002D040E /* HomePostsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A151D2E4F44002D040E /* HomePostsManager.m */; };
+		76624A291D315C47002D040E /* PostDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A281D315C47002D040E /* PostDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		76624A121D2E4CC6002D040E /* PostComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostComment.m; sourceTree = "<group>"; };
 		76624A141D2E4F44002D040E /* HomePostsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePostsManager.h; sourceTree = "<group>"; };
 		76624A151D2E4F44002D040E /* HomePostsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePostsManager.m; sourceTree = "<group>"; };
+		76624A271D315C47002D040E /* PostDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostDetailViewController.h; sourceTree = "<group>"; };
+		76624A281D315C47002D040E /* PostDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 				766249E01D2D2AF9002D040E /* HomeViewController.m */,
 				76624A001D2E3C98002D040E /* PostTableViewCell.h */,
 				76624A011D2E3C98002D040E /* PostTableViewCell.m */,
+				76624A271D315C47002D040E /* PostDetailViewController.h */,
+				76624A281D315C47002D040E /* PostDetailViewController.m */,
 			);
 			name = "1.首页";
 			sourceTree = "<group>";
@@ -394,6 +399,7 @@
 				76624A131D2E4CC6002D040E /* PostComment.m in Sources */,
 				76624A101D2E4B5A002D040E /* PostTag.m in Sources */,
 				766249E11D2D2AF9002D040E /* HomeViewController.m in Sources */,
+				76624A291D315C47002D040E /* PostDetailViewController.m in Sources */,
 				766249E71D2D2BB8002D040E /* ShareViewController.m in Sources */,
 				76624A161D2E4F44002D040E /* HomePostsManager.m in Sources */,
 				76624A0D1D2E4999002D040E /* Blogger.m in Sources */,

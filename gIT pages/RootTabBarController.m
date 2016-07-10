@@ -21,6 +21,7 @@
     [[self tabBar] setTranslucent:NO];
     [[self tabBar] setBackgroundColor:[UIColor whiteColor]];
     [[self tabBar] setTintColor:LEMON_MAIN_COLOR];
+//    [self setHidesBottomBarWhenPushed:YES];
     
     // 5个viewController
     HomeViewController *homeVC              =   [[HomeViewController alloc] init];

@@ -13,11 +13,14 @@
 #import "Blogger.h"
 #import "PostComment.h"
 #import "PostTag.h"
+#import "PostDetailViewController.h"
 
 #define CELLREUSE_TOPCELL           @"cr_topTVCell"
 #define CELL_REUSE_POSTCELL         @"cr_postTVCell"
 
 @interface HomeViewController ()
+
+@property (nonatomic, strong) UIActivityIndicatorView *loadHomeDataIndicator;       // App启动后，首页数据加载指示器
 
 @end
 
@@ -27,25 +30,45 @@
 {
     [super viewDidLoad];
     [[self navigationItem] setTitle:TITLE_HOMEPAGE];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    
-    _posts = [NSArray array];
+    [self.view setBackgroundColor:LEMON_MAIN_COLOR];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-    [_tableView setBackgroundColor:[UIColor redColor]];
+    [_tableView setBackgroundColor:LEMON_TINT_COLOR];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
     [_tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:CELL_REUSE_POSTCELL];
     
     [self.view addSubview:_tableView];
     
+    // 添加加载指示器
+    _loadHomeDataIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [_loadHomeDataIndicator setColor:LEMON_BLUE_COLOR];
+    [_loadHomeDataIndicator setCenter:CGPointMake(self.view.center.x, self.view.center.y - (ASSERT_NAVBAR_HEIGHT + ASSERT_TABBAR_HEIGHT) / 2.0)];
+    [_loadHomeDataIndicator setHidesWhenStopped:YES];
+    [self.view addSubview:_loadHomeDataIndicator];
+    [_loadHomeDataIndicator startAnimating];
+    
+    _posts = [NSArray array];
+    // 监听postItems
+    [[HomePostsManager sharedManager] addObserver:self forKeyPath:@"postItems" options:NSKeyValueObservingOptionNew context:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homeDataUpdated) name:@"HomeDataUpdated" object:nil];
+    // 获取postItems
     [[HomePostsManager sharedManager] updateHomePosts];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homeDataUpdated) name:@"HomeDataUpdated" object:nil];
 }
 
 -(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - 监听到postItems变化
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"postItems"])
+    {
+        [self homeDataUpdated];
+    }
 }
 
 - (void)homeDataUpdated
@@ -55,6 +78,11 @@
     if (_tableView != nil)
     {
         [_tableView reloadData];
+        
+        if (_loadHomeDataIndicator != nil && [_loadHomeDataIndicator isAnimating])
+        {
+            [_loadHomeDataIndicator stopAnimating];
+        }
     }
 }
 
@@ -95,4 +123,15 @@
     return 0.01;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 取消选中
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelected:NO];
+    
+    // 压入文章内容VC
+    PostItem *item = [_posts objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:[[PostDetailViewController alloc] initWithPostItem:item]animated:YES];
+}
 @end

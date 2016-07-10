@@ -74,6 +74,7 @@
     NSDictionary *twitterDic = json[@"twitter"];
     Blogger *twitter = [[Blogger alloc] initWithName:twitterDic[@"name"] url:twitterDic[@"url"]];
 
+    NSMutableArray *tmpPosts = [NSMutableArray array];
     for (NSDictionary *post in json[@"posts"])
     {
         NSArray *commentsJson = post[@"comments"];
@@ -93,9 +94,18 @@
                                                        Likes:[post[@"likes"] intValue]
                                                         Date:post[@"date"]];
         
-        [_postItems addObject:postItem];
+        [tmpPosts addObject:postItem];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"HomeDataUpdated" object:nil];
+    
+    // 方法1:注册监听
+//    dispatch_async(dispatch_get_main_queue(), ^(){
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"HomeDataUpdated" object:nil];
+//    });
+    
+    // 方法2:kvo
+    dispatch_async(dispatch_get_main_queue(), ^(){
+     [self setPostItems:[tmpPosts copy]];
+    });
 }
 
 @end

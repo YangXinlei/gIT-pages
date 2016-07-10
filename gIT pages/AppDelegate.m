@@ -27,7 +27,6 @@
     
     [_window makeKeyAndVisible];
     
-    
     return YES;
 }
 
