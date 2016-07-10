@@ -23,7 +23,7 @@
     [_window setTintColor:LEMON_TINT_COLOR];
     
     RootTabBarController *rootTabBarController = [[RootTabBarController alloc] init];
-    [_window setRootViewController:rootTabBarController];
+        [_window setRootViewController:rootTabBarController];
     
     [_window makeKeyAndVisible];
     

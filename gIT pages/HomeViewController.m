@@ -43,7 +43,7 @@
     // 添加加载指示器
     _loadHomeDataIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [_loadHomeDataIndicator setColor:LEMON_BLUE_COLOR];
-    [_loadHomeDataIndicator setCenter:CGPointMake(self.view.center.x, self.view.center.y - (ASSERT_NAVBAR_HEIGHT + ASSERT_TABBAR_HEIGHT) / 2.0)];
+    [_loadHomeDataIndicator setCenter:CGPointMake(self.view.center.x, self.view.center.y - (ASSERT_NAVBAR_HEIGHT + ASSERT_TABBAR_HEIGHT + STATUSBAR_HEIGHT) / 2.0)];
     [_loadHomeDataIndicator setHidesWhenStopped:YES];
     [self.view addSubview:_loadHomeDataIndicator];
     [_loadHomeDataIndicator startAnimating];
@@ -129,9 +129,10 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO];
     
+    [self setHidesBottomBarWhenPushed:YES];
     // 压入文章内容VC
     PostItem *item = [_posts objectAtIndex:indexPath.row];
-    
-    [self.navigationController pushViewController:[[PostDetailViewController alloc] initWithPostItem:item]animated:YES];
+    [[self navigationController] pushViewController:[[PostDetailViewController alloc] initWithPostItem:item]animated:YES];
+    [self setHidesBottomBarWhenPushed:NO];
 }
 @end

@@ -24,8 +24,10 @@
 // size
 #define WINDOW_WIDTH                        [[UIScreen mainScreen] bounds].size.width
 #define WINDOW_HEIGHT                       [[UIScreen mainScreen] bounds].size.height
+#define STATUSBAR_HEIGHT                    [[UIApplication sharedApplication] statusBarFrame].size.height
 #define ASSERT_NAVBAR_HEIGHT                44.0
-#define ASSERT_TABBAR_HEIGHT                59.0
+#define ASSERT_TABBAR_HEIGHT                49.0
 #define HOME_POSTCELL_HEIGHT                ((WINDOW_HEIGHT - ASSERT_NAVBAR_HEIGHT - ASSERT_TABBAR_HEIGHT) / 6.0)
+#define SUBVIEW_HEIGHT                      WINDOW_HEIGHT - STATUSBAR_HEIGHT - ASSERT_NAVBAR_HEIGHT
 
 #endif /* Defs_h */

@@ -8,8 +8,11 @@
 
 #import "PostDetailViewController.h"
 #import "PostItem.h"
+#import "Defs.h"
 
 @interface PostDetailViewController ()
+
+@property (nonatomic, strong) UIToolbar *toobar;
 
 @end
 
@@ -27,22 +30,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // 设置导航栏
     [[self navigationItem] setTitle:[_post title]];
-//    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopAndBack)];
-//    [[self navigationItem] setLeftBarButtonItem:leftItem];
     
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareBtnClicked)];
-    [[self navigationItem] setRightBarButtonItem:rightItem];
+    // 设置工具栏
+    _toobar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, SUBVIEW_HEIGHT - ASSERT_TABBAR_HEIGHT, WINDOW_WIDTH, ASSERT_TABBAR_HEIGHT)];
+    [_toobar setTintColor:LEMON_MAIN_COLOR];
+//   UIBarButtonItem *goBackItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemReply target:self action:@selector(goBackBtnClicked)];
+//    UIBarButtonItem *goForwardItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(goForwardBtnClicked)];
+    UIBarButtonItem *stopItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(stopBtnClicked)];
+    UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshBtnClicked)];
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareBtnClicked)];
+    UIBarButtonItem *commentItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(commentBtnClicked)];
     
-    _postWebView = [[UIWebView alloc] initWithFrame:self.view.frame];
     
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    [_toobar setItems:@[fixedSpace, stopItem,
+                        flexibleSpace, refreshItem,
+                        flexibleSpace, shareItem,
+                        flexibleSpace, commentItem,
+                        fixedSpace]];
+    
+    [self.view addSubview:_toobar];
+    
+    _postWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, WINDOW_WIDTH, SUBVIEW_HEIGHT - ASSERT_TABBAR_HEIGHT)];
+    [_postWebView setBackgroundColor:LEMON_MAIN_COLOR];
     NSURLRequest *request = [NSURLRequest requestWithURL:[_post url]];
     [_postWebView loadRequest:request];
     
     [self.view addSubview:_postWebView];
     
+    [self.view bringSubviewToFront:_toobar];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,39 +70,50 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated
+#pragma mark - 导航栏，工具栏按钮动作
+
+- (void)stopBtnClicked
 {
-    [super viewWillAppear:animated];
-    
-    // 隐藏导航栏
-    [[self navigationController] setHidesBarsOnSwipe:YES];
-    
-    // 隐藏状态栏
-    UITabBarController *rootTabBarVC = (UITabBarController *)[[[UIApplication sharedApplication] keyWindow] rootViewController];
-    [[rootTabBarVC tabBar] setHidden:YES];
+    [_postWebView stopLoading];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
+- (void)refreshBtnClicked
 {
-    [super viewWillDisappear:animated];
-    
-    // 重新设置导航栏隐藏模式
-    [[self navigationController] setHidesBarsOnSwipe:NO];
-    
-    // 重新显示状态栏
-    UITabBarController *rootTabBarVC = (UITabBarController *)[[[UIApplication sharedApplication] keyWindow] rootViewController];
-    [[rootTabBarVC tabBar] setHidden:NO];
+    [_postWebView reload];
 }
 
-#pragma mark - 导航栏按钮动作
+- (void)goBackBtnClicked
+{
+    if ([_postWebView canGoBack])
+    {
+        [_postWebView goBack];
+        
+        // 后退之后检查是否还能后退
+        if (![_postWebView canGoBack])
+        {
+            UIBarButtonItem *item = [[_toobar items] objectAtIndex:0];
+            [item setEnabled:NO];
+        }
+    }
+}
 
-//- (void)stopAndBack
-//{
-//    [_postWebView stopLoading];
-////    [_postWebView removeFromSuperview];
-////    _postWebView = nil;
-//    [[self navigationController] popViewControllerAnimated:YES];
-//}
+- (void)goForwardBtnClicked
+{
+    if ([_postWebView canGoForward])
+    {
+        [_postWebView goForward];
+    }
+}
+
+- (void)likeBtnClicked:(UIBarButtonItem *)sender
+{
+    [sender setTitle:[NSString stringWithFormat:@"%lu", (unsigned long)[_post likes] + 1]];
+}
+
+- (void)commentBtnClicked
+{
+    
+}
 
 - (void) shareBtnClicked
 {
