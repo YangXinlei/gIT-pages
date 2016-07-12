@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class  PostItem;
-@interface PostDetailViewController : UIViewController
+@interface PostDetailViewController : UIViewController <UIWebViewDelegate, UIScrollViewDelegate>
 
 @property (nonatomic, strong) PostItem *post;               // 文章
 @property (nonatomic, strong) UIWebView *postWebView;       // 使用一个webView展示文章内容

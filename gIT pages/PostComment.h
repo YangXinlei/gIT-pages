@@ -14,7 +14,7 @@
 @interface PostComment : NSObject
 
 @property (nonatomic, weak) PostItem    *post;      // 评论文章
-@property (nonatomic, weak) Blogger     *blogger;   // 评论人
+@property (nonatomic, strong) Blogger     *blogger;   // 评论人
 @property (nonatomic, strong) NSString  *content;   // 评论内容
 @property (nonatomic, strong) NSDate    *date;      // 评论日期
 

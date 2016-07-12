@@ -21,6 +21,7 @@
 @interface HomeViewController ()
 
 @property (nonatomic, strong) UIActivityIndicatorView *loadHomeDataIndicator;       // App启动后，首页数据加载指示器
+@property (nonatomic, strong) UIRefreshControl *refreshControl;                     // 下拉刷新控件
 
 @end
 
@@ -39,6 +40,9 @@
     [_tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:CELL_REUSE_POSTCELL];
     
     [self.view addSubview:_tableView];
+    
+    // 下拉刷新
+    [self setupRefreshControl];
     
     // 添加加载指示器
     _loadHomeDataIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -61,6 +65,22 @@
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - 下拉刷新／上拉加载
+
+- (void)setupRefreshControl
+{
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self action:@selector(refreshAction:) forControlEvents:UIControlEventValueChanged];
+    
+    [_tableView addSubview:_refreshControl];
+}
+
+- (void)refreshAction:(UIRefreshControl *)refreshControl
+{
+    // 获取postItems
+    [[HomePostsManager sharedManager] updateHomePosts];
+}
+
 #pragma mark - 监听到postItems变化
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
@@ -79,9 +99,16 @@
     {
         [_tableView reloadData];
         
+        // 停止加载指示器
         if (_loadHomeDataIndicator != nil && [_loadHomeDataIndicator isAnimating])
         {
             [_loadHomeDataIndicator stopAnimating];
+        }
+        
+        // 停止下拉刷新指示器
+        if (_refreshControl != nil && [_refreshControl isRefreshing])
+        {
+            [_refreshControl endRefreshing];
         }
     }
 }
@@ -126,13 +153,17 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // 取消选中
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    PostTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setSelected:NO];
     
+    // 隐藏push的新界面的tabbar
     [self setHidesBottomBarWhenPushed:YES];
+    
     // 压入文章内容VC
     PostItem *item = [_posts objectAtIndex:indexPath.row];
     [[self navigationController] pushViewController:[[PostDetailViewController alloc] initWithPostItem:item]animated:YES];
+    
+    // pop回来以后重新显示toobar
     [self setHidesBottomBarWhenPushed:NO];
 }
 @end

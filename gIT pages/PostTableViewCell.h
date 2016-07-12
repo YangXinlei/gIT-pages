@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class PostItem;
-
+@class PostCellViewController;
 // 文章Cell
 @interface PostTableViewCell : UITableViewCell
 
-
+@property (nonatomic, strong) PostCellViewController *postCellVC;
 
 - (void)setupWithPostItem:(PostItem *)item;
 

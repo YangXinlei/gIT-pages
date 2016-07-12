@@ -8,12 +8,15 @@
 
 #import "PostTableViewCell.h"
 #import "PostItem.h"
+#import "PostCellViewController.h"
 
 @implementation PostTableViewCell
 
 - (void)setupWithPostItem:(PostItem *)item
 {
-    [self.textLabel setText:item.title];
+    _postCellVC = [[PostCellViewController alloc] initWithPostItem:item];
+    
+    [self.contentView addSubview:_postCellVC.view];
 }
 
 @end

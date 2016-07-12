@@ -73,11 +73,12 @@
     Blogger *blogger = [[Blogger alloc] initWithName:bloggerDic[@"name"] url:bloggerDic[@"url"]];
     NSDictionary *twitterDic = json[@"twitter"];
     Blogger *twitter = [[Blogger alloc] initWithName:twitterDic[@"name"] url:twitterDic[@"url"]];
-
+    
     NSMutableArray *tmpPosts = [NSMutableArray array];
     for (NSDictionary *post in json[@"posts"])
     {
         NSArray *commentsJson = post[@"comments"];
+        
         NSMutableArray<PostComment *> *postComments = [NSMutableArray arrayWithCapacity:3];
         for (NSDictionary *comment in commentsJson)
         {
