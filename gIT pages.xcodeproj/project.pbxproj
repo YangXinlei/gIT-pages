@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7620CBA81D420FBB003DEC50 /* ToTopBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7620CBA71D420FBB003DEC50 /* ToTopBtnView.m */; };
+		7620CBAB1D4224D7003DEC50 /* BigColorfulCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7620CBAA1D4224D7003DEC50 /* BigColorfulCircleView.m */; };
 		762732A31D2BACEB00E27858 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 762732A21D2BACEB00E27858 /* main.m */; };
 		762732A61D2BACEB00E27858 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 762732A51D2BACEB00E27858 /* AppDelegate.m */; };
 		762732AE1D2BACEC00E27858 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 762732AD1D2BACEC00E27858 /* Assets.xcassets */; };
@@ -55,6 +56,8 @@
 /* Begin PBXFileReference section */
 		7620CBA61D420FBB003DEC50 /* ToTopBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToTopBtnView.h; sourceTree = "<group>"; };
 		7620CBA71D420FBB003DEC50 /* ToTopBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToTopBtnView.m; sourceTree = "<group>"; };
+		7620CBA91D4224D7003DEC50 /* BigColorfulCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigColorfulCircleView.h; sourceTree = "<group>"; };
+		7620CBAA1D4224D7003DEC50 /* BigColorfulCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigColorfulCircleView.m; sourceTree = "<group>"; };
 		7627329E1D2BACEB00E27858 /* gIT pages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gIT pages.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		762732A21D2BACEB00E27858 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		762732A41D2BACEB00E27858 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 			children = (
 				766249E51D2D2BB8002D040E /* ShareViewController.h */,
 				766249E61D2D2BB8002D040E /* ShareViewController.m */,
+				7620CBA91D4224D7003DEC50 /* BigColorfulCircleView.h */,
+				7620CBAA1D4224D7003DEC50 /* BigColorfulCircleView.m */,
 			);
 			name = "3.分享";
 			sourceTree = "<group>";
@@ -453,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				762732A61D2BACEB00E27858 /* AppDelegate.m in Sources */,
+				7620CBAB1D4224D7003DEC50 /* BigColorfulCircleView.m in Sources */,
 				76624A381D33A102002D040E /* CommentCell.m in Sources */,
 				766249ED1D2D2C00002D040E /* MineViewController.m in Sources */,
 				76624A411D33AEDC002D040E /* PostCellViewController.m in Sources */,
