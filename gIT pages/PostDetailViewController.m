@@ -11,6 +11,7 @@
 #import "PostItem.h"
 #import "PostComment.h"
 #import "CommentsViewController.h"
+#import "ToTopBtnView.h"
 #import "Defs.h"
 
 #define HEADER_INFO_HEIGHT                  40.0
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) UIBarButtonItem *shareItem;                           // 工具栏分享文章按钮
 @property (nonatomic, strong) UIBarButtonItem *commentItem;                         // 工具栏文章评论按钮
 @property (nonatomic, strong) UIActivityIndicatorView *loadHomeDataIndicator;       // 数据加载指示器
+@property (nonatomic, strong) ToTopBtnView          *toTopBtnView;                  // 返回顶部按钮
 
 @end
 
@@ -73,6 +75,9 @@
     [[_postWebView scrollView] setDelegate:self];
     [self.view addSubview:_postWebView];
     
+    // 设置 返回顶部按钮
+    _toTopBtnView = [[ToTopBtnView alloc] initWithFrame:CGRectMake(WINDOW_WIDTH - TOTOPBTN_SIZE - TOTOPBTN_MARGIN, SUBVIEW_HEIGHT - ASSERT_TABBAR_HEIGHT - TOTOPBTN_SIZE - TOTOPBTN_MARGIN, TOTOPBTN_SIZE, TOTOPBTN_SIZE)];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toTopBtnClicked) name:kToTopNotification object:nil];
     // 添加加载指示器
     _loadHomeDataIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [_loadHomeDataIndicator setColor:LEMON_MAIN_COLOR];
@@ -209,6 +214,30 @@
 {
     [[self navigationItem] setTitle:@"加载失败"];
     [_refreshItem setEnabled:YES];
+}
+
+#pragma mark - scroll view delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //    NSLog(@"scrollOffset: %@", NSStringFromCGPoint(scrollView.contentOffset));
+    CGFloat yOffset = [scrollView contentOffset].y;
+    if (yOffset > 0 && [_toTopBtnView isShowing] == NO)
+    {
+        [self.view addSubview:_toTopBtnView];
+        [_toTopBtnView appearWithDuration:1.0];
+    }
+    else if (yOffset <= 0 && [_toTopBtnView isShowing] == YES)
+    {
+        [_toTopBtnView disappearAndRemoveWithDuration:0.5];
+    }
+}
+
+#pragma  mark notifications
+
+- (void)toTopBtnClicked
+{
+    [[_postWebView scrollView] setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 @end

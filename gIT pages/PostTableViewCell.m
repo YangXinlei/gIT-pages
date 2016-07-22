@@ -14,9 +14,15 @@
 
 - (void)setupWithPostItem:(PostItem *)item
 {
+    if (_postCellVC)
+    {
+        [_postCellVC.view removeFromSuperview];
+    }
+    
     _postCellVC = [[PostCellViewController alloc] initWithPostItem:item];
     
     [self.contentView addSubview:_postCellVC.view];
 }
 
 @end
+

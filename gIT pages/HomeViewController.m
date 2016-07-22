@@ -14,14 +14,17 @@
 #import "PostComment.h"
 #import "PostTag.h"
 #import "PostDetailViewController.h"
+#import "ToTopBtnView.h"
 
 #define CELLREUSE_TOPCELL           @"cr_topTVCell"
 #define CELL_REUSE_POSTCELL         @"cr_postTVCell"
 
 @interface HomeViewController ()
 
-@property (nonatomic, strong) UIActivityIndicatorView *loadHomeDataIndicator;       // App启动后，首页数据加载指示器
-@property (nonatomic, strong) UIRefreshControl *refreshControl;                     // 下拉刷新控件
+@property (nonatomic, strong) UIActivityIndicatorView   *loadHomeDataIndicator;       // App启动后，首页数据加载指示器
+@property (nonatomic, strong) UIRefreshControl          *refreshControl;                     // 下拉刷新控件
+@property (nonatomic) BOOL                              isToTopBtnShowing;
+@property (nonatomic, strong) ToTopBtnView              *toTopBtnView;
 
 @end
 
@@ -33,13 +36,17 @@
     [[self navigationItem] setTitle:TITLE_HOMEPAGE];
     [self.view setBackgroundColor:LEMON_MAIN_COLOR];
     
-    _tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
+    _isToTopBtnShowing = NO;
+    
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, WINDOW_WIDTH, SUBVIEW_HEIGHT - ASSERT_TABBAR_HEIGHT) style:UITableViewStylePlain];
     [_tableView setBackgroundColor:LEMON_TINT_COLOR];
     [_tableView setDelegate:self];
     [_tableView setDataSource:self];
     [_tableView registerClass:[PostTableViewCell class] forCellReuseIdentifier:CELL_REUSE_POSTCELL];
     
     [self.view addSubview:_tableView];
+    
+    _toTopBtnView = [[ToTopBtnView alloc] initWithFrame:CGRectMake(WINDOW_WIDTH - TOTOPBTN_SIZE - TOTOPBTN_MARGIN, SUBVIEW_HEIGHT - ASSERT_TABBAR_HEIGHT - TOTOPBTN_SIZE - TOTOPBTN_MARGIN, TOTOPBTN_SIZE, TOTOPBTN_SIZE)];
     
     // 下拉刷新
     [self setupRefreshControl];
@@ -56,6 +63,7 @@
     // 监听postItems
     [[HomePostsManager sharedManager] addObserver:self forKeyPath:@"postItems" options:NSKeyValueObservingOptionNew context:nil];
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(homeDataUpdated) name:@"HomeDataUpdated" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(toTopBtnClicked) name:kToTopNotification object:nil];
     // 获取postItems
     [[HomePostsManager sharedManager] updateHomePosts];
 }
@@ -165,5 +173,47 @@
     
     // pop回来以后重新显示toobar
     [self setHidesBottomBarWhenPushed:NO];
+}
+#pragma mark setters & getters
+
+- (void)setIsToTopBtnShowing:(BOOL)isToTopBtnShowing
+{
+    _isToTopBtnShowing = isToTopBtnShowing;
+    if (_isToTopBtnShowing == YES)
+    {
+        [self.view addSubview:_toTopBtnView];
+        [_toTopBtnView appearWithDuration:1.0];
+    }
+    else
+    {
+        [_toTopBtnView disappearAndRemoveWithDuration:0.5];
+    }
+}
+
+
+#pragma mark scrollviewdelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    NSLog(@"scrollOffset: %@", NSStringFromCGPoint(scrollView.contentOffset));
+    CGFloat yOffset = [scrollView contentOffset].y;
+    if (yOffset > 0 && !_isToTopBtnShowing)
+    {
+        [self setIsToTopBtnShowing:YES];
+    }
+    else if (yOffset <= 0)
+    {
+        if (_isToTopBtnShowing == YES)
+        {
+            [self setIsToTopBtnShowing:NO];
+        }
+    }
+}
+
+#pragma  mark notifications
+
+- (void)toTopBtnClicked
+{
+    [_tableView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 @end

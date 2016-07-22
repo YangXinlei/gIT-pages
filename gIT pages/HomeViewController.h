@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PostItem.h"
 
-@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;                               // 首页主要由tableView组成
 
