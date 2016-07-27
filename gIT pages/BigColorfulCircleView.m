@@ -7,8 +7,9 @@
 //
 
 #import "BigColorfulCircleView.h"
+#import "Defs.h"
 
-#define  Text_Height                20.0f
+#define  Text_Height                40.0f
 
 @implementation BigColorfulCircleView
 
@@ -40,8 +41,10 @@
         CGFloat textFieldWidth = frame.size.width * 4 / 5.0;
         _textField = [[UITextField alloc] initWithFrame:CGRectMake( (frame.size.width - textFieldWidth) / 2.0, (frame.size.height - Text_Height) * 2 / 3.0,textFieldWidth, Text_Height )];
         [_textField setPlaceholder:placeHolder];
+        [_textField setTextAlignment:NSTextAlignmentCenter];
         [_textField setTextColor:tintColor];
         [_textField setBackgroundColor:bgColor];
+        [_textField setDelegate:self];
         [self addSubview:_textField];
     }
     return self;
@@ -54,5 +57,10 @@
     // Drawing code
 }
 */
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:kshareTextFieldBeginNotification object:nil];
+}
 
 @end

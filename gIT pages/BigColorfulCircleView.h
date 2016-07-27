@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BigColorfulCircleView : UIView
+@interface BigColorfulCircleView : UIView <UITextFieldDelegate>
 
 // 元素
 @property (nonatomic, strong) UILabel           *titleLabel;

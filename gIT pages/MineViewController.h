@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MineViewController : UITableViewController <UIScrollViewDelegate>
+@class MineView;
+
+@interface MineViewController : UIViewController <UIScrollViewDelegate>
 
 @end
