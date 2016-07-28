@@ -15,7 +15,7 @@
 @property (nonatomic, strong) UIImage           *bgImage;                    // 背景图片
 
 
-- (instancetype)initWithRandomFrameAndTitle:(NSString *)title;
+- (instancetype)initWithRandomFactor:(int)factor AndTitle:(NSString *)title;
 - (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title thumbnail:(UIImage *)thumbnail bgImage:(UIImage *)bgImage;
 
 @end

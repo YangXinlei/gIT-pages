@@ -49,10 +49,10 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        _userBubble = [[BubbleView alloc] initWithRandomFrameAndTitle:@"鑫磊"];
-        _shareBubble = [[BubbleView alloc] initWithRandomFrameAndTitle:@"分享\t16"];
-        _watchBubble = [[BubbleView alloc] initWithRandomFrameAndTitle:@"关注\t42"];
-        _collectBubble = [[BubbleView alloc] initWithRandomFrameAndTitle:@"收藏\t3"];
+        _userBubble = [[BubbleView alloc] initWithRandomFactor:1 AndTitle:@"鑫磊"];
+        _shareBubble = [[BubbleView alloc] initWithRandomFactor:2 AndTitle:@"分享\t16"];
+        _watchBubble = [[BubbleView alloc] initWithRandomFactor:3 AndTitle:@"关注\t42"];
+        _collectBubble = [[BubbleView alloc] initWithRandomFactor:4 AndTitle:@"收藏\t3"];
         
         [self addSubview:_userBubble];
         [self addSubview:_shareBubble];
