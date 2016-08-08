@@ -10,4 +10,6 @@
 
 @interface MineView : UIView
 
+- (instancetype)initWithFrame:(CGRect)frame andActions:(NSArray *)actions;
+
 @end

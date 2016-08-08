@@ -16,7 +16,7 @@
 
 @implementation BubbleView
 
-- (instancetype)initWithRandomFactor:(int)factor AndTitle:(NSString *)title
+- (instancetype)initWithRandomFactor:(int)factor andTitle:(NSString *)title andAction:(void (^)(void))action
 {
     // bubble 长宽
     // frame size: 120 - 220(120~160: 20%)(160~200: 70%)(200~220:10%)
@@ -48,10 +48,10 @@
     int xStart = arc4random() % ((int)WINDOW_WIDTH - 215);
     xStart += 10;
     
-    return [self initWithFrame:CGRectMake(xStart, yStart, size, size) title:title thumbnail:nil bgImage:nil];
+    return [self initWithFrame:CGRectMake(xStart, yStart, size, size) title:title thumbnail:nil bgImage:nil action:action];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title thumbnail:(UIImage *)thumbnail bgImage:(UIImage *)bgImage
+- (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title thumbnail:(UIImage *)thumbnail bgImage:(UIImage *)bgImage action:(void (^)(void))action
 {
     self = [super initWithFrame:frame];
     if (self)
@@ -80,6 +80,8 @@
         [_titleLabel setFrame:CGRectMake((frame.size.width - _titleLabel.frame.size.width) / 2, (frame.size.height - _titleLabel.frame.size.height) / 2, _titleLabel.frame.size.width, _titleLabel.frame.size.height)];
         
         [self addSubview:_titleLabel];
+        
+        _actionBlock = action;
     }
     return self;
 }
@@ -96,5 +98,13 @@
     // Drawing code
 }
 */
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    if (_actionBlock != nil)
+    {
+        _actionBlock();
+    }
+}
 
 @end

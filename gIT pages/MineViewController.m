@@ -9,11 +9,13 @@
 #import "MineViewController.h"
 #import "MineView.h"
 #import "Defs.h"
+#import "NextToDoViewController.h"
 
 
 @interface MineViewController ()
 
 @property (nonatomic, strong) MineView          *mineView;          // main view
+@property (nonatomic, strong) NSArray           *bubbleActionArray;
 
 @end
 
@@ -24,6 +26,15 @@
     [super viewDidLoad];
     
     [self.navigationController.navigationBar setHidden:YES];
+    
+    __block typeof(self) weakSelf = self;
+    _bubbleActionArray = @[
+                           ^{
+                               UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:[[NextToDoViewController alloc] init]];
+                               
+                               [weakSelf presentViewController:navController animated:YES completion:^{}];
+                           }
+                            ];
 }
 
 -(void)didReceiveMemoryWarning
@@ -34,7 +45,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    _mineView = [[MineView alloc] initWithFrame:CGRectMake(0, -800, self.view.frame.size.width, 800 + self.view.frame.size.height)];
+    _mineView = [[MineView alloc] initWithFrame:CGRectMake(0, -800, self.view.frame.size.width, 800 + self.view.frame.size.height) andActions:_bubbleActionArray];
     [self.view addSubview:_mineView];
 }
 

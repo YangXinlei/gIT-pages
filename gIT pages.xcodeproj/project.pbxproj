@@ -32,6 +32,7 @@
 		76624A321D33A035002D040E /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A311D33A035002D040E /* CommentsViewController.m */; };
 		76624A381D33A102002D040E /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A371D33A102002D040E /* CommentCell.m */; };
 		76624A411D33AEDC002D040E /* PostCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A401D33AEDC002D040E /* PostCellViewController.m */; };
+		7699EEF01D58A235007783A0 /* NextToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7699EEEF1D58A235007783A0 /* NextToDoViewController.m */; };
 		76B064E21D4783E3005A86F9 /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B064E11D4783E3005A86F9 /* MineView.m */; };
 		76B064E51D4784DD005A86F9 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B064E41D4784DD005A86F9 /* BubbleView.m */; };
 		76B064E81D478835005A86F9 /* BubbleDropBehavior.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B064E71D478835005A86F9 /* BubbleDropBehavior.m */; };
@@ -107,6 +108,8 @@
 		76624A371D33A102002D040E /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		76624A3F1D33AEDC002D040E /* PostCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCellViewController.h; sourceTree = "<group>"; };
 		76624A401D33AEDC002D040E /* PostCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCellViewController.m; sourceTree = "<group>"; };
+		7699EEEE1D58A235007783A0 /* NextToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextToDoViewController.h; sourceTree = "<group>"; };
+		7699EEEF1D58A235007783A0 /* NextToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextToDoViewController.m; sourceTree = "<group>"; };
 		76B064E01D4783E3005A86F9 /* MineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
 		76B064E11D4783E3005A86F9 /* MineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineView.m; sourceTree = "<group>"; };
 		76B064E31D4784DD005A86F9 /* BubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleView.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				76B064E41D4784DD005A86F9 /* BubbleView.m */,
 				76B064E61D478835005A86F9 /* BubbleDropBehavior.h */,
 				76B064E71D478835005A86F9 /* BubbleDropBehavior.m */,
+				7699EEEE1D58A235007783A0 /* NextToDoViewController.h */,
+				7699EEEF1D58A235007783A0 /* NextToDoViewController.m */,
 			);
 			name = "5.我的";
 			sourceTree = "<group>";
@@ -474,6 +479,7 @@
 				76624A101D2E4B5A002D040E /* PostTag.m in Sources */,
 				766249E11D2D2AF9002D040E /* HomeViewController.m in Sources */,
 				76624A2F1D339157002D040E /* CommentView.m in Sources */,
+				7699EEF01D58A235007783A0 /* NextToDoViewController.m in Sources */,
 				76624A291D315C47002D040E /* PostDetailViewController.m in Sources */,
 				766249E71D2D2BB8002D040E /* ShareViewController.m in Sources */,
 				76624A161D2E4F44002D040E /* HomePostsManager.m in Sources */,

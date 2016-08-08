@@ -44,15 +44,55 @@
     return _dropBehavior;
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame andActions:(NSArray *)actions
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        _userBubble = [[BubbleView alloc] initWithRandomFactor:1 AndTitle:@"鑫磊"];
-        _shareBubble = [[BubbleView alloc] initWithRandomFactor:2 AndTitle:@"分享\t16"];
-        _watchBubble = [[BubbleView alloc] initWithRandomFactor:3 AndTitle:@"关注\t42"];
-        _collectBubble = [[BubbleView alloc] initWithRandomFactor:4 AndTitle:@"收藏\t3"];
+        int i = 1;
+        _userBubble = [[BubbleView alloc] initWithRandomFactor:i andTitle:@"鑫磊" andAction:^{
+            if ([actions count] >= i)
+            {
+                void(^ action)(void) = actions[i - 1];
+                if (action != nil)
+                {
+                    action();
+                }
+            }
+        }];
+        ++i;
+        _shareBubble = [[BubbleView alloc] initWithRandomFactor:i andTitle:@"分享\t16" andAction:^{
+            if ([actions count] >= i)
+            {
+                void(^ action)(void) = actions[i - 1];
+                if (action != nil)
+                {
+                    action();
+                }
+            }
+        }];
+        ++i;
+        _watchBubble = [[BubbleView alloc] initWithRandomFactor:i andTitle:@"关注\t42" andAction:^{
+            if ([actions count] >= i)
+            {
+                void(^ action)(void) = actions[i - 1];
+                if (action != nil)
+                {
+                    action();
+                }
+            }
+        }];
+        ++i;
+        _collectBubble = [[BubbleView alloc] initWithRandomFactor:i andTitle:@"收藏\t3" andAction:^{
+            if ([actions count] >= i)
+            {
+                void(^ action)(void) = actions[i - 1];
+                if (action != nil)
+                {
+                    action();
+                }
+            }
+        }];
         
         [self addSubview:_userBubble];
         [self addSubview:_shareBubble];

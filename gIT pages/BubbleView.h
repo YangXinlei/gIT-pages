@@ -14,8 +14,11 @@
 @property (nonatomic, strong) UIImage           *thumbnail;                  // 头像
 @property (nonatomic, strong) UIImage           *bgImage;                    // 背景图片
 
+// action
+@property (nonatomic, copy) void (^actionBlock)(void);
 
-- (instancetype)initWithRandomFactor:(int)factor AndTitle:(NSString *)title;
-- (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title thumbnail:(UIImage *)thumbnail bgImage:(UIImage *)bgImage;
+
+- (instancetype)initWithRandomFactor:(int)factor andTitle:(NSString *)title andAction:(void (^)(void))action;
+- (instancetype)initWithFrame:(CGRect)frame title:(NSString *)title thumbnail:(UIImage *)thumbnail bgImage:(UIImage *)bgImage action:(void (^)(void))action;
 
 @end
