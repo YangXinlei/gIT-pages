@@ -32,6 +32,7 @@
 		76624A321D33A035002D040E /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A311D33A035002D040E /* CommentsViewController.m */; };
 		76624A381D33A102002D040E /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A371D33A102002D040E /* CommentCell.m */; };
 		76624A411D33AEDC002D040E /* PostCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76624A401D33AEDC002D040E /* PostCellViewController.m */; };
+		766995AC1D5C806F00A35F4B /* ToggleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 766995AB1D5C806F00A35F4B /* ToggleView.m */; };
 		7699EEF01D58A235007783A0 /* NextToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7699EEEF1D58A235007783A0 /* NextToDoViewController.m */; };
 		76B064E21D4783E3005A86F9 /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B064E11D4783E3005A86F9 /* MineView.m */; };
 		76B064E51D4784DD005A86F9 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 76B064E41D4784DD005A86F9 /* BubbleView.m */; };
@@ -108,6 +109,8 @@
 		76624A371D33A102002D040E /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		76624A3F1D33AEDC002D040E /* PostCellViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCellViewController.h; sourceTree = "<group>"; };
 		76624A401D33AEDC002D040E /* PostCellViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCellViewController.m; sourceTree = "<group>"; };
+		766995AA1D5C806F00A35F4B /* ToggleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleView.h; sourceTree = "<group>"; };
+		766995AB1D5C806F00A35F4B /* ToggleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleView.m; sourceTree = "<group>"; };
 		7699EEEE1D58A235007783A0 /* NextToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NextToDoViewController.h; sourceTree = "<group>"; };
 		7699EEEF1D58A235007783A0 /* NextToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NextToDoViewController.m; sourceTree = "<group>"; };
 		76B064E01D4783E3005A86F9 /* MineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
@@ -239,6 +242,8 @@
 			children = (
 				766249E21D2D2B98002D040E /* ActivityViewController.h */,
 				766249E31D2D2B98002D040E /* ActivityViewController.m */,
+				766995AA1D5C806F00A35F4B /* ToggleView.h */,
+				766995AB1D5C806F00A35F4B /* ToggleView.m */,
 			);
 			name = "2.动态";
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 				76624A411D33AEDC002D040E /* PostCellViewController.m in Sources */,
 				762732A31D2BACEB00E27858 /* main.m in Sources */,
 				76624A131D2E4CC6002D040E /* PostComment.m in Sources */,
+				766995AC1D5C806F00A35F4B /* ToggleView.m in Sources */,
 				7620CBA81D420FBB003DEC50 /* ToTopBtnView.m in Sources */,
 				76624A101D2E4B5A002D040E /* PostTag.m in Sources */,
 				766249E11D2D2AF9002D040E /* HomeViewController.m in Sources */,

@@ -55,7 +55,7 @@
     }
     
     [self setViewControllers:navViewControllers animated:YES];
-    [self setSelectedIndex:4];
+    [self setSelectedIndex:1];
 }
 
 @end
