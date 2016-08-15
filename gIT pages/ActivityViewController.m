@@ -31,19 +31,20 @@
     
     [self.view setBackgroundColor:LEMON_TINT_COLOR];
     
-    NSArray<NSString *> *barTitles = @[@"最新", @"最热", @"与我相关"];
+    NSArray<NSString *> *barTitles = @[@"最热", @"最新", @"与我相关"];
     
     UIView *titleView = [[ToggleView alloc] initWithNames:barTitles delegate:self];
     
     [[self navigationItem] setTitleView:titleView];
     
     _vcArray = [NSMutableArray arrayWithCapacity:[barTitles count]];
-    HomeViewController *homeVC = [[HomeViewController alloc] init];
-    [_vcArray addObject:homeVC];
     
     PostItem *item = [[PostItem alloc] initWithTitle:@"abc" Url:@"https://yangxinlei.github.io/ios/2016/07/25/UIScrollView-contentSize-contentOffset-contentInset.html" Blogger:nil Twitter:nil Tag:nil Comments:nil Likes:0 Date:0];
     PostDetailViewController *hotPostVC = [[PostDetailViewController alloc] initWithPostItem:item];
     [_vcArray addObject:hotPostVC];
+    
+    HomeViewController *homeVC = [[HomeViewController alloc] init];
+    [_vcArray addObject:homeVC];
     
     Blogger *blogger = [[Blogger alloc] initWithName:@"杨鑫磊" url:nil];
     PostComment *comment1 = [[PostComment alloc] initWithPost:nil Blogger:blogger Content:@"lz我爱你" Date:@"2016-08-01T11:02:02+00:00"];
