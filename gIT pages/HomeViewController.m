@@ -133,6 +133,9 @@
     
     PostTableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:CELL_REUSE_POSTCELL forIndexPath:indexPath];
     
+    [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
+    [cell setTintColor:LEMON_MAIN_COLOR];
+    
     [cell setupWithPostItem:item];
     
     return cell;
